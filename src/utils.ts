@@ -36,7 +36,7 @@ export function parseRepositoryUrl(url: string): {
   // First, remove `.git` if it exists
   let sanitizedUrl = url.replace(/\.git$/, "");
   
-  let match = sanitizedUrl.match(/github\.com[:/]([^/]+)\/([^/]+)/);
+  let match = sanitizedUrl.match(/github\.com[:/]([^/]+)\/([^/?#]+)/);
 
   if (!match) {
     // Try simple owner/repo format
