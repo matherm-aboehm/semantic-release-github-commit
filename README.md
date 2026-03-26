@@ -2,7 +2,7 @@
 
 [**semantic-release**](https://github.com/semantic-release/semantic-release) plugin to commit release assets to GitHub using the REST API.
 
-[![npm](https://img.shields.io/npm/v/@matherm-aboehm/semantic-release-github-commit.svg?registry_uri=https://npm.pkg.github.com)](https://github.com/matherm-aboehm/semantic-release-github-commit/pkgs)
+[![npm](https://img.shields.io/npm/v/@matherm-aboehm/semantic-release-github-commit.svg?label=GPR&logo=github&registry_uri=https%3A%2F%2Fnpm.pkg.github.com)](https://github.com/matherm-aboehm/semantic-release-github-commit/pkgs/npm/semantic-release-github-commit)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 | Step               | Description                                                                 |
