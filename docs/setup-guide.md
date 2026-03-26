@@ -1,6 +1,6 @@
 # Complete Setup Guide
 
-This guide walks you through setting up `@jno21/semantic-release-github-commit` from scratch with a GitHub App for verified commits on protected branches.
+This guide walks you through setting up `@matherm-aboehm/semantic-release-github-commit` from scratch with a GitHub App for verified commits on protected branches.
 
 ## Table of Contents
 
@@ -168,13 +168,13 @@ This option gives you full control over semantic-release and plugin versions.
 Install the plugin as a dev dependency:
 
 ```bash
-npm install --save-dev @jno21/semantic-release-github-commit
+npm install --save-dev @matherm-aboehm/semantic-release-github-commit --registry https://npm.pkg.github.com
 ```
 
 Or with yarn:
 
 ```bash
-yarn add --dev @jno21/semantic-release-github-commit
+YARN_REGISTRY="https://npm.pkg.github.com" yarn add --dev @matherm-aboehm/semantic-release-github-commit
 ```
 
 **Step 2: Configure semantic-release**
@@ -189,7 +189,7 @@ module.exports = {
     '@semantic-release/release-notes-generator',
     '@semantic-release/npm',
     [
-      '@jno21/semantic-release-github-commit',
+      '@matherm-aboehm/semantic-release-github-commit',
       {
         files: [
           'dist/**',           // Build artifacts
@@ -205,7 +205,7 @@ module.exports = {
 };
 ```
 
-> **Important:** Place `@jno21/semantic-release-github-commit` **before** `@semantic-release/github` so the commit is created before the GitHub release.
+> **Important:** Place `@matherm-aboehm/semantic-release-github-commit` **before** `@semantic-release/github` so the commit is created before the GitHub release.
 
 **Common configurations:**
 
@@ -225,7 +225,7 @@ module.exports = {
     ],
     '@semantic-release/npm',
     [
-      '@jno21/semantic-release-github-commit',
+      '@matherm-aboehm/semantic-release-github-commit',
       {
         files: ['dist/**', 'CHANGELOG.md', 'package.json', 'package-lock.json']
       }
@@ -245,7 +245,7 @@ module.exports = {
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
     [
-      '@jno21/semantic-release-github-commit',
+      '@matherm-aboehm/semantic-release-github-commit',
       {
         files: ['dist/**', 'CHANGELOG.md']
       }
@@ -331,7 +331,7 @@ module.exports = {
     '@semantic-release/release-notes-generator',
     '@semantic-release/npm',
     [
-      '@jno21/semantic-release-github-commit',
+      '@matherm-aboehm/semantic-release-github-commit',
       {
         files: [
           'dist/**',
@@ -386,7 +386,7 @@ jobs:
         uses: cycjimmy/semantic-release-action@v5
         with:
           extra_plugins: |
-            @jno21/semantic-release-github-commit
+            @matherm-aboehm/semantic-release-github-commit
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -405,7 +405,7 @@ jobs:
         id: semantic
         with:
           extra_plugins: |
-            @jno21/semantic-release-github-commit
+            @matherm-aboehm/semantic-release-github-commit
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
