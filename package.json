@@ -1,10 +1,14 @@
 {
-  "name": "@jno21/semantic-release-github-commit",
-  "version": "1.0.0",
+  "name": "@matherm-aboehm/semantic-release-github-commit",
+  "version": "1.1.0-beta.2",
   "description": "Semantic-release plugin to commit files to GitHub using the REST API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "author": "Jonathan Forget",
+  "author": "Andreas Böhm",
+  "contributors": [
+    "Jonathan Forget",
+    "Andreas Böhm"
+  ],
   "files": [
     "dist"
   ],
@@ -15,7 +19,11 @@
     "prepublishOnly": "npm run build",
     "prepare": "npm run build"
   },
-  "homepage": "https://github.com/Jno21/semantic-release-github-commit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matherm-aboehm/semantic-release-github-commit.git"
+  },
+  "homepage": "https://github.com/matherm-aboehm/semantic-release-github-commit#readme",
   "keywords": [
     "semantic-release",
     "plugin",
@@ -25,7 +33,8 @@
   ],
   "license": "MIT",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "engines": {
     "node": ">=20"

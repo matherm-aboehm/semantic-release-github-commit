@@ -10,6 +10,7 @@ name: Release
 permissions:
   contents: read # for checkout
   id-token: write # to enable use of OIDC for npm provenance
+  packages: write
 
 jobs:
   release:
@@ -27,6 +28,7 @@ jobs:
 
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
+          fetch-depth: 0
           persist-credentials: false
 
       - uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
@@ -43,7 +45,9 @@ jobs:
 
       - run: corepack npm audit signatures
 
-      - run: npx semantic-release
+      - run: npx semantic-release ${DEBUG_ARG}
         env:
+          DEBUG_ARG: ${{ case(runner.debug == '1', '--debug', '') }}
           GITHUB_TOKEN: ${{ steps.app_token.outputs.token }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_CONFIG_REGISTRY: 'https://npm.pkg.github.com'
