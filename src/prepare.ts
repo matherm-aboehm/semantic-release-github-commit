@@ -97,7 +97,6 @@ export async function prepare(
     `chore(release): \${nextRelease.version} [skip ci]`;
 
   // Replace template variables
-  /* istanbul ignore else: else path with noop not covered by istanbul, though it is tested */
   if (commitMessage && nextRelease) {
     commitMessage = commitMessage
       .replace(/\$\{nextRelease\.version\}/g, nextRelease.version)
@@ -106,7 +105,6 @@ export async function prepare(
       .replace(/\$\{nextRelease\.notes\}/g, nextRelease.notes);
   } else if (!nextRelease) {
     // Fallback if no nextRelease context
-    /* istanbul ignore next: always noop, maybe wrong intention? */
     commitMessage = commitMessage || "chore(release): update [skip ci]";
   }
 
