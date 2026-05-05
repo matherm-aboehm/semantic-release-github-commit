@@ -16,6 +16,7 @@
     "build": "tsc",
     "test": "jest",
     "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "prepublishOnly": "npm run build",
     "prepare": "npm run build"
   },
